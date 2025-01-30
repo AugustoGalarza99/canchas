@@ -3,11 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;  
-    background: url(../../../public/levelstudio.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 100%;    
   }
   .fomrs{
     display: flex;
@@ -26,6 +22,10 @@
     background: #0000008f;
     border: 2px solid #fff;
     border-radius: 10px;
+    background-image: url(../../../public/levelstudio.png);
+    background-size: contain;
+    background-position: center;    
+    background-repeat: no-repeat;
   }
   .h2-login {
     font-size: 2rem;
