@@ -63,10 +63,10 @@ html, body, #root {
   --font: "Linux Biolinum Capitals", sans-serif;
   --color-letras: black;
   --color-letras-boton: white;
-  --color-boton: #e66938;
+  --color-boton: #000000;
   color: black;
-  background: -webkit-linear-gradient(180deg, #ffffff,#fee0c4,#c74410);/* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(180deg, #ffffff,#fee0c4,#c74410);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(180deg, #d1ccce,#d3cbb6,#d3cb95);/* Chrome 10-25, Safari 5.1-6 */                          
+  background: linear-gradient(180deg, #d1ccce,#d3cbb6,#d3cb95);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
   input::placeholder { color: rgba(0, 0, 0, 0.493);}
 }
 @media (max-width: 1000px) {
@@ -74,3 +74,4 @@ html, body, #root {
     padding-bottom: 20px;
   }
 }
+
