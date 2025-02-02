@@ -220,7 +220,7 @@ const fetchHorariosDisponibles = async () => {
 
                         Swal.fire({
                             title: ' ',
-                            text: `ESTA PROFESIONAL ATIENDE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
+                            text: `ESTE PROFESIONAL ATIENDE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
                             icon: 'error',
                             background: 'black',
                             color: 'white',
