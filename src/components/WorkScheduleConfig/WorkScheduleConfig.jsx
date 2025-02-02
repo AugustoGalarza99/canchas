@@ -141,6 +141,7 @@ const WorkScheduleConfig = () => {
                   >
                     <option value={10}>10 minutos</option>
                     <option value={15}>15 minutos</option>
+                    <option value={20}>20 minutos</option>
                     <option value={30}>30 minutos</option>
                     <option value={60}>60 minutos</option>
                     <option value={90}>90 minutos</option>
