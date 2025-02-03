@@ -26,7 +26,7 @@ function BottomNavbar() {
       <nav className="bottom-navbar">
         <Link to="/" className="nav-icon"><FiHome size={24} /> Reserva</Link>
         <Link to="/estado" className="nav-icon"><FiInfo size={24} /> Estado</Link>
-        {/*<Link to="/productos" className="nav-icon"><FiShoppingCart size={24} /> Productos</Link>*/}
+        <Link to="/productos" className="nav-icon"><FiShoppingCart size={24} /> Productos</Link>
         {user ? (
           <div className="nav-icon" onClick={toggleMenu}>
             <FiMoreVertical size={24} /> Más</div>

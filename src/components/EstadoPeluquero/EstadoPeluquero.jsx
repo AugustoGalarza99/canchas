@@ -99,7 +99,7 @@ const EstadoPeluquero = () => {
 
     return (
         <div className="estado-peluquero">
-            <h2>Consulta el estado de tu turno</h2>
+            <h2>Consulta la informacion de tu turno</h2>
             <p className='p-estado'>
                 Ingresa tu DNI para consultar el estado de tu turno. Si lo deseas, también puedes cancelarlo 
                 hasta 4 horas antes de la hora del turno.

@@ -3,6 +3,7 @@ import { useRole } from "../../RoleContext";
 import CambiarContraseña from "../CambiarContraseña/CambiarContraseña";
 import './Administrativo.css';
 
+
 // Lazy load para componentes que solo se usan en el rol "administrador"
 const SubirProducto = lazy(() => import("../SubirProducto/SubirProducto"));
 const AdminProductos = lazy(() => import("../AdminProductos/AdminProductos"));
@@ -20,12 +21,12 @@ const Administrativo = () => {
       )}
 
       {/* Componentes visibles solo para el rol administrador */}
-      {/*{role === "administrador" && (
+      {role === "administrador" && (
         <Suspense fallback={<div>Cargando...</div>}>
           <SubirProducto />
           <AdminProductos />
         </Suspense>
-      )}*/}
+      )}
     </div>
   );
 };

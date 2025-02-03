@@ -220,7 +220,7 @@ const fetchHorariosDisponibles = async () => {
 
                         Swal.fire({
                             title: ' ',
-                            text: `ESTE PROFESIONAL ATIENDE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
+                            text: `ESTA CANCHA ESTA DISPONIBLE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
                             icon: 'error',
                             background: 'black',
                             color: 'white',
@@ -340,7 +340,7 @@ const handleAgendar = async (e) => {
                 <div className="titulo">
                     <h1 className='titulo'> <RxCalendar /> Reservar turno</h1>
                 </div>  
-                <h3 className='h3'>Completa el siguiente formulario para reservar tu cita</h3>             
+                <h3 className='h3'>Completa el siguiente formulario para reservar un turno</h3>             
                 {/*<div className='div-tel'>*/}
                 <div className='div-tel'>
 
@@ -376,7 +376,7 @@ const handleAgendar = async (e) => {
                 
                 {/*</div>*/}
                 <div className='div-date'>
-                    <label className='titulo-servicio' >Profesional:</label>
+                    <label className='titulo-servicio' >Selecciona la cancha:</label>
 
                     <select
                         className='select-seccion'

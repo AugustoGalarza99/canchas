@@ -9,12 +9,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .button-codigo{
     width: 50%;
     margin-top: 10px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-block;
     background: var(--color-boton);

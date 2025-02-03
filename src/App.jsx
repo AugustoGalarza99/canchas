@@ -80,7 +80,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ReservaPage />} />
           <Route path="/estado" element={<Estado />} />
-          {/*<Route path="/productos" element={<Productos />} />*/}
+          <Route path="/productos" element={<Productos />} />
           <Route path="/login" element={<LoginPeluquero />} />
 
           {/* Ruta protegida para el panel del peluquero */}

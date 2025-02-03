@@ -22,14 +22,14 @@ const GeneradorCodigo = () => {
 
                     if (peluqueroSnapshot.exists()) {
                         const { nombre } = peluqueroSnapshot.data(); // Obtener el campo "nombre"
-                        setNombrePeluquero(nombre || 'Usuario desconocido');
+                        setNombrePeluquero(nombre || 'Usuario');
                     } else {
                         console.error('No se encontró el documento del peluquero.');
-                        setNombrePeluquero('Usuario desconocido');
+                        setNombrePeluquero('Usuario');
                     }
                 } catch (error) {
                     console.error('Error al obtener el nombre del peluquero:', error);
-                    setNombrePeluquero('Usuario desconocido');
+                    setNombrePeluquero('Usuario');
                 }
             }
         };
@@ -65,7 +65,6 @@ const GeneradorCodigo = () => {
 
     return (
         <div className="code">
-            <h3>Mi agenda</h3>
             <button className="button-codigo" onClick={generarCodigo} disabled={loading}>
                 {loading ? 'Generando...' : 'Generar Código'}
             </button>

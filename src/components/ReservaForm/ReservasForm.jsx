@@ -225,7 +225,7 @@ const ReservasForm = () => {
         
                                 Swal.fire({
                                     title: ' ',
-                                    text: `ESTE PROFESIONAL ATIENDE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
+                                    text: `ESTA CANCHA ESTA DISPONIBLE LOS DIAS: ${diasLaborales.map(d => d.toUpperCase()).join(', ')}.`,
                                     icon: 'error',
                                     background: 'black',
                                     color: 'white',
@@ -289,7 +289,7 @@ const ReservasForm = () => {
 
                             Swal.fire({
                                 title: 'Reserva registrada',
-                                html: 'Tu reserva ha sido creada exitosamente, muchas gracias. <br><br> <strong>IMPORTANTE:</strong> El turno puede verse modificado en +/- 15 minutos, en caso de serlo seras notificado. <br><br>Gracias por su comprensión',
+                                html: 'Tu reserva ha sido creada exitosamente, muchas gracias.',
                                 icon: 'success',
                                 background: 'black', 
                                 color: 'white', 
@@ -357,37 +357,6 @@ const ReservasForm = () => {
             setLoading(false);
         }
     };
-    
-   {/* const handleSolicitarCodigo = async () => {
-        if (whatsapp) {
-            const whatsappUrl = `https://wa.me/${whatsapp}?text=Hola,%20necesito%20un%20código%20de%20verificación%20para%20reservar%20mi%20turno.`;
-            window.open(whatsappUrl, '_blank');
-        } else {
-            try {
-                const peluqueroDocRef = doc(db, 'peluqueros', profesional); // Obtener datos del peluquero por ID
-                const peluqueroDocSnap = await getDoc(peluqueroDocRef);
-    
-                if (peluqueroDocSnap.exists()) {
-                    const whatsappNumber = peluqueroDocSnap.data().whatsapp;
-                    setWhatsapp(whatsappNumber);
-                    window.open(`https://wa.me/${whatsappNumber}?text=Hola,%20necesito%20un%20código%20de%20verificación%20para%20reservar%20mi%20turno.`, `_blank`);
-                } else {
-                    Swal.fire({
-                        title: 'Error de peluquero',
-                        text: 'No se encontro el numero de telefono del peluquero, intenta nuevamente.',
-                        icon: 'error',
-                        background: 'black', 
-                        color: 'white', 
-                        confirmButtonText: 'Ok'
-                    });
-                }
-            } catch (error) {
-                console.error('Error obteniendo el número de WhatsApp:', error);
-            }
-        }
-    };
-    */}
-
 
     const handleSolicitarCodigo = async () => {
         if (whatsapp) {
@@ -413,7 +382,7 @@ const ReservasForm = () => {
                 } else {
                     Swal.fire({
                         title: 'Error de profesional',
-                        text: 'No se encontró el número de teléfono del profesional, intenta nuevamente.',
+                        text: 'No se encontró el número de teléfono, intenta nuevamente.',
                         icon: 'error',
                         background: 'black',
                         color: 'white',
@@ -425,53 +394,51 @@ const ReservasForm = () => {
             }
         }
     };
-    
-    
+
 
     const handleVerificarCodigo = async () => {
         if (loading) return;
         setLoading(true);
+        
         try {
-            const codigoDocRef = doc(db, 'codigos_verificacion', profesional);
-            const codigoDocSnap = await getDoc(codigoDocRef);
-    
-            if (codigoDocSnap.exists()) {
-                const codigoData = codigoDocSnap.data();
+            // Obtener todos los documentos de la colección "codigos_verificacion"
+            const querySnapshot = await getDocs(collection(db, 'codigos_verificacion'));
+            
+            // Buscar si algún documento tiene el código ingresado
+            let codigoValido = false;
+
+            querySnapshot.forEach((doc) => {
+                const codigoData = doc.data();
                 if (codigoData.codigoVerificacion === parseInt(codigoVerificacion)) {
-                    // Si el código es correcto, guardar el cliente como verificado
-                    await guardarClienteVerificado();
-    
-                    // Ahora que el cliente está verificado, crear la reserva
-                    await guardarReserva();
-                    
-                    Swal.fire({
-                        title: 'Código verificado y reserva creada',
-                        html: 'Tu reserva ha sido creada exitosamente, muchas gracias. <br><br> <strong>IMPORTANTE:</strong> El turno puede verse modificado en +/- 15 minutos, en caso de serlo seras notificado. <br><br>Gracias por su comprensión',
-                        icon: 'success',
-                        background: 'black', // Fondo rojo claro
-                        color: 'white', // Texto rojo oscuro
-                        confirmButtonText: 'Ok'
-                    });
-    
-                    // Redirigir al usuario después de la reserva
-                    navigate('/estado');
-                } else {
-                    Swal.fire({
-                        title: 'Código incorrecto',
-                        text: 'El código de verificación ingresado es incorrecto. Por favor, intenta nuevamente.',
-                        icon: 'error',
-                        background: 'black', 
-                        color: 'white', 
-                        confirmButtonText: 'Ok'
-                    });
+                    codigoValido = true;
                 }
+            });
+
+            if (codigoValido) {
+                // Si el código es válido, guardar el cliente como verificado
+                await guardarClienteVerificado();
+
+                // Crear la reserva
+                await guardarReserva();
+
+                Swal.fire({
+                    title: 'Código verificado y reserva creada',
+                    html: 'Tu reserva ha sido creada exitosamente, muchas gracias.',
+                    icon: 'success',
+                    background: 'black',
+                    color: 'white',
+                    confirmButtonText: 'Ok'
+                });
+
+                // Redirigir al usuario
+                navigate('/estado');
             } else {
                 Swal.fire({
                     title: 'Código incorrecto',
                     text: 'El código de verificación ingresado es incorrecto. Por favor, intenta nuevamente.',
                     icon: 'error',
-                    background: 'black', 
-                    color: 'white', 
+                    background: 'black',
+                    color: 'white',
                     confirmButtonText: 'Ok'
                 });
             }
@@ -481,14 +448,15 @@ const ReservasForm = () => {
                 title: 'Error',
                 text: 'Ocurrió un error al verificar el código. Intenta nuevamente más tarde.',
                 icon: 'error',
-                background: 'black', 
-                color: 'white', 
+                background: 'black',
+                color: 'white',
                 confirmButtonText: 'Ok'
             });
-        } finally{
+        } finally {
             setLoading(false);
         }
     };
+
 
     const guardarReserva = async () => {
         try {

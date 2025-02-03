@@ -176,7 +176,7 @@ useEffect(() => {
   
     const message = `Hola! 👋
 Te esperamos para tu turno el 
-🗓 ${fechaLocal.toLocaleDateString()} a las ${reserva.hora} en Monteros Vanesa Espacio. 
+🗓 ${fechaLocal.toLocaleDateString()} a las ${reserva.hora} en NOMBRE. 
 
 En caso de no poder asistir por favor avísanos 🙌🏽
 ¡Gracias! ❤`;
@@ -555,7 +555,7 @@ const handleCancelTurn = async (reserva) => {
         {rolUsuario === "administrador" && peluqueros.length > 0 && (
           <>
             <FormControl fullWidth>
-              <InputLabel id="select-peluquero-label">Profesional</InputLabel>
+              <InputLabel id="select-peluquero-label">Canchas</InputLabel>
               <Select
                 labelId="select-peluquero-label"
                 value={peluqueroSeleccionado}
@@ -601,7 +601,7 @@ const handleCancelTurn = async (reserva) => {
               <TableCell>Hora Fin</TableCell>
               <TableCell>Cliente</TableCell>
               <TableCell>Servicio</TableCell>
-              <TableCell>Profesional</TableCell>
+              <TableCell>Cancha</TableCell>
               <TableCell>Estado</TableCell>
               <TableCell>Acciones</TableCell>
             </TableRow>
@@ -672,7 +672,7 @@ const handleCancelTurn = async (reserva) => {
                 <p>{reserva.servicio}</p>
               </div>
               <div className="card-row">
-                <span>Profesional:</span>
+                <span>Cancha:</span>
                 <p>{reserva.nombrePeluquero}</p>
               </div>
               <div className="card-row">
