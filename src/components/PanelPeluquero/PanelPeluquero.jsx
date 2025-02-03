@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 import GeneradorCodigo from '../GeneradorCodigo/GeneradorCodigo';
-import CalendarioPeluquero from '../CalendarioPeluquero/CalendarioPeluquero';
 
 
 
@@ -23,11 +22,6 @@ const PanelPeluquero = () => {
     return (
         <div>
             <GeneradorCodigo />
-            {uidPeluquero ? (
-                <CalendarioPeluquero uidPeluquero={uidPeluquero} />
-            ) : (
-                <p>Cargando el UID del profesional...</p>
-            )}
         </div>
     );
 };

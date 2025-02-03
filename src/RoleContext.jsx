@@ -12,7 +12,7 @@ export const RoleProvider = ({ children }) => {
   const [role, setRole] = useState(null); // Almacenar el rol del usuario
   const [roleLoading, setRoleLoading] = useState(true); // Indicador de carga del rol
 
-  console.log("Rol asignado:", role);
+  /*console.log("Rol asignado:", role);*/
 
 
   useEffect(() => {

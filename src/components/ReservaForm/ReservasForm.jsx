@@ -548,9 +548,9 @@ const ReservasForm = () => {
             <form className='form-reserva' onSubmit={handleAgendar}>
             <div className='titulo'>
                 <RxCalendar />
-                <h1 className='titulo'>Agenda tu cita</h1>                
+                <h1 className='titulo'>Reserva tu cancha</h1>                
             </div>
-            <h3 className='h3'>Completa el siguiente formulario para reservar tu cita</h3>
+            <h3 className='h3'>Completa el siguiente formulario para reservar tu cancha</h3>
                 <div className='seccion'>
                 <input className='input-gral' type="text" placeholder='Ingresa tu DNI' value={dni}   onChange={(e) => {const value = e.target.value;if (/^\d*$/.test(value)) {setDni(value);}}} required />
                 </div>
@@ -560,7 +560,7 @@ const ReservasForm = () => {
                 <input className='input-gral2' type="text" placeholder='Ingresa tu número de teléfono' value={telefono} onChange={(e) => {const value = e.target.value; if (/^\d*$/.test(value)) {setTelefono(value);}}} required />
             </div>
             <div className='div-date'>
-                <label className='titulo-servicio'>Selecciona tu profesional</label>
+                <label className='titulo-servicio'>Selecciona tu cancha</label>
                     <select
                         className='select-seccion'
                         value={profesional}

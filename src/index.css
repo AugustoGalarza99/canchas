@@ -20,38 +20,6 @@ body {
   font-family: "Linux Biolinum Capitals", sans-serif;
 }
 
-/*html, body, #root {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100vw; 
-  overflow-x: hidden; 
-  --titulo-color: #1b1c3f;
-  --border-input: 1.5px solid #000000;
-  --font: "Roboto", sans-serif;
-  --color-letras: rgb(0, 0, 0);
-  --color-boton: linear-gradient(to bottom, #f3f3f7, #EC96B1);
-  color: black;
-  background: -webkit-linear-gradient(90deg, #fcf3f5,#edb1d0);background: linear-gradient(90deg, #fcf3f5,#edb1d0);
-  input::placeholder { color: rgb(0, 0, 0);}
-}*/
-
-
-/*html, body, #root {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; 
-  width: 100vw;  
-  overflow-x: hidden; 
-  --titulo-color: #1b1c3f;
-  --border-input: 1.5px solid #0aa6e4;
-  --font: "Roboto", sans-serif;
-  --color-letras: white;
-  --color-boton: linear-gradient(to bottom, #1b1c3f, #4a4e91);
-  color: rgb(245, 245, 245);
-  background-color:black;
-}*/
-
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -65,8 +33,7 @@ html, body, #root {
   --color-letras-boton: white;
   --color-boton: #000000;
   color: black;
-  background: -webkit-linear-gradient(180deg, #d1ccce,#d3cbb6,#d3cb95);/* Chrome 10-25, Safari 5.1-6 */                          
-  background: linear-gradient(180deg, #d1ccce,#d3cbb6,#d3cb95);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+  background: -webkit-linear-gradient(0deg, #95be9c,#c6ddbe);background: linear-gradient(0deg, #95be9c,#c6ddbe);                                       
   input::placeholder { color: rgba(0, 0, 0, 0.493);}
 }
 @media (max-width: 1000px) {

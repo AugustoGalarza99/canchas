@@ -67,7 +67,7 @@ const DemorasProfesionales = () => {
             <table className="demoras-table">
                 <thead>
                     <tr>
-                        <th>Profesional</th>
+                        <th>Cancha</th>
                         <th>Demora (minutos)</th>
                     </tr>
                 </thead>

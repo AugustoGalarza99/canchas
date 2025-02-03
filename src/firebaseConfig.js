@@ -5,13 +5,13 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyARYcv3MY2jt7r2Ik9TgwB5Yxt1ng2bm3Q",
-  authDomain: "levelstudio-807b5.firebaseapp.com",
-  projectId: "levelstudio-807b5",
-  storageBucket: "levelstudio-807b5.firebasestorage.app",
-  messagingSenderId: "456507487427",
-  appId: "1:456507487427:web:0d40185dd0aadd947bde76",
-  measurementId: "G-G5QDLQYEF0"
+  apiKey: "AIzaSyAwXwEtvGfJFqpqGkHbSvwvdvuAQiD6big",
+  authDomain: "canchas-cbe9a.firebaseapp.com",
+  projectId: "canchas-cbe9a",
+  storageBucket: "canchas-cbe9a.firebasestorage.app",
+  messagingSenderId: "655036006674",
+  appId: "1:655036006674:web:af3919e58a9d36bca4f3cb",
+  measurementId: "G-FSYDC9K71T"
 };
 
 // Inicializar Firebase
