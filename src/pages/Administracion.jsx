@@ -7,7 +7,7 @@ import GeneradorCodigo from "../components/GeneradorCodigo/GeneradorCodigo";
 const Administracion = () => {
   return (
     <div>
-        {/*<DemorasProfesionales />*/}
+        <DemorasProfesionales />
         <AccesoCodigos />
         <GeneradorCodigo />
         <Administrativo />

@@ -7,7 +7,7 @@ const Estado = () => {
   return (
     <div>
         <EstadoPeluquero />
-        {/*<EstadoDemoras />*/}
+        <EstadoDemoras />
     </div>
   );
 };

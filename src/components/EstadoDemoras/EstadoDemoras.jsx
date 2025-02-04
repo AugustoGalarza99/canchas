@@ -93,7 +93,7 @@ const EstadoDemoras = () => {
                 <table className="estado-demoras-table">
                     <thead>
                         <tr>
-                            <th>Profesional</th>
+                            <th>Cancha</th>
                             <th>Estado</th>
                         </tr>
                     </thead>

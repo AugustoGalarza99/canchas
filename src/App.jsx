@@ -23,6 +23,7 @@ import Administracion from './pages/Administracion';
 import FloatingWhatsAppButton from './components/Whatsapp/Whatsapp';
 import Turnos from './pages/Turnos';
 import ReservasDoss from './pages/ReservasDos';
+import Ventas from './pages/Ventas';
 
 
 // Componentes simples para las páginas
@@ -92,6 +93,7 @@ function App() {
           <Route path="/servicios" element={<ProtectedRoute requiredRole="peluquero"><Servicios /></ProtectedRoute>} />
           <Route path="/administracion" element={<ProtectedRoute requiredRole={["administrador", "peluquero"]}><Administracion /></ProtectedRoute>} />
           <Route path="/gestionreservas" element={<ProtectedRoute requiredRole="administrador"><Turnos /></ProtectedRoute>} />
+          <Route path="/ventas" element={<ProtectedRoute requiredRole="administrador"><Ventas /></ProtectedRoute>} />
 
           {/* Si el usuario intenta ir a una ruta que no existe */}
           <Route path="*" element={<NotFound />} />

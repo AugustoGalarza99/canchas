@@ -3,7 +3,7 @@ import { useRole } from '../../RoleContext';
 import { auth } from '../../firebaseConfig';
 import { Link } from 'react-router-dom';
 import './DesktopNavbar.css';
-import { FiHome, FiUser, FiInfo, FiClock, FiXCircle, FiClipboard, FiBriefcase, FiPieChart, FiShoppingCart, FiTool } from 'react-icons/fi';
+import { FiHome, FiUser, FiInfo, FiClock, FiXCircle, FiClipboard, FiBriefcase, FiPieChart, FiShoppingCart, FiTool, FiDollarSign } from 'react-icons/fi';
 import { RxCalendar } from "react-icons/rx";
 import Loader from '../Loader/Loader';
 
@@ -42,6 +42,7 @@ function DesktopNavbar() {
             <li><Link to="/reservamanual"><RxCalendar size={24} /> Reserva manual</Link></li>
             <li><Link to="/finanzas"><FiPieChart size={24} /> Finanzas</Link></li>            
             <li><Link to="/gestionreservas"><FiTool size={24} /> Gestión Reservas</Link></li>
+            <li><Link to="/ventas"><FiDollarSign size={24} /> Ventas</Link></li>
             <li><Link to="/administracion"><FiUser size={24} /> Administración</Link></li>
           </>
         )}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useRole } from '../../RoleContext'; // Importar el contexto de roles
 import { auth } from '../../firebaseConfig';
 import './BottomNavbar.css';
-import { FiHome, FiUser, FiMoreVertical, FiInfo, FiClock, FiXCircle, FiClipboard, FiBriefcase, FiPieChart, FiShoppingCart, FiTool,} from 'react-icons/fi';
+import { FiHome, FiUser, FiMoreVertical, FiInfo, FiClock, FiXCircle, FiClipboard, FiBriefcase, FiPieChart, FiShoppingCart, FiTool, FiDollarSign} from 'react-icons/fi';
 import { RxCalendar } from 'react-icons/rx';
 
 function BottomNavbar() {
@@ -56,6 +56,7 @@ function BottomNavbar() {
                 <li><Link to="/reservamanual" onClick={() => setIsMenuOpen(false)}><RxCalendar size={16} /> Reserva manual</Link></li>
                 <li><Link to="/finanzas" onClick={() => setIsMenuOpen(false)}><FiPieChart size={16} /> Finanzas</Link></li>             
                 <li><Link to="/gestionreservas" onClick={() => setIsMenuOpen(false)}><FiTool size={16} /> Gestión Reservas</Link></li>
+                <li><Link to="/ventas" onClick={() => setIsMenuOpen(false)}><FiDollarSign size={16} /> Ventas</Link></li>
                 <li><Link to="/administracion" onClick={() => setIsMenuOpen(false)}><FiUser size={16} /> Administración</Link></li>
               </>
             )}
