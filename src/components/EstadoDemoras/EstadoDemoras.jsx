@@ -78,11 +78,11 @@ const EstadoDemoras = () => {
     const getEstadoProfesional = (demora) => {
         if (isToday(demora.fecha)) {
             if (demora.demora === 0) {
-                return "El profesional no tiene demora"; // Si la demora es 0
+                return "La cancha no tiene demora"; // Si la demora es 0
             }
             return `Demora de ${demora.demora} minutos`; // Si la fecha es de hoy
         }
-        return "El profesional no tiene demora"; // Si no hay demora para hoy
+        return "La cancha no tiene demora"; // Si no hay demora para hoy
     };
 
     return (
